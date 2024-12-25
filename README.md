@@ -1,6 +1,6 @@
-# Next.js Hello World
+# Next.js Hello World Benchmark
 
-This is a simple Next.js app that returns "Hello, World!" message, made for benchmarking Next.js resource usage.
+This is a simple Next.js (JavaScript) web app that returns "Hello, World!" response, made for benchmarking performance and resource usage and comparing it with [Axum (Rust)](https://github.com/evgenyneu/axum-hello-world) benchmark.
 
 ## Build
 
@@ -24,7 +24,7 @@ scp -r .next/standalone/. lorange:~/nextjs-hello-world/
 scp cluster.js lorange:~/nextjs-hello-world/
 ```
 
-Run:
+Open deployment directory:
 
 ```sh
 ssh lorange
