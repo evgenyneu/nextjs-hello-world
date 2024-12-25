@@ -87,33 +87,33 @@ Requests/sec:   1210.83
 Transfer/sec:    315.71KB
 ```
 
-### Stress test #2 (eight CPU cores)
+### Stress test #2 (two processes)
 
-With cluster mode (all CPU cores): `node cluster.js`
+Two Node.js processes: `node cluster.js`
 
 ```sh
 wrk -t10 -c1000 -d600s http://192.168.20.25:3000/
 ```
 
-* RAM usage: 1.68G
-* CPU Load average (over 1 minute): 10.30
+* RAM usage: 689MB
+* CPU Load average (over 1 minute): 5.03
 
 Results:
 
 ```
   10 threads and 1000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   314.74ms  230.52ms   2.00s    83.49%
-    Req/Sec   345.04     93.39   810.00     69.73%
-  2053154 requests in 10.00m, 522.80MB read
-  Socket errors: connect 0, read 0, write 0, timeout 805
-Requests/sec:   3421.41
-Transfer/sec:      0.87MB
+    Latency   418.90ms   71.75ms   1.95s    88.40%
+    Req/Sec   244.33    155.53   840.00     65.74%
+  1332659 requests in 10.00m, 339.34MB read
+  Socket errors: connect 0, read 0, write 0, timeout 917
+Requests/sec:   2220.73
+Transfer/sec:    579.04KB
 ```
 
-### Stress test #3 (four CPU cores)
+### Stress test #3 (four processes)
 
-Using only four CPU cores instead of eight: `node cluster.js`
+Four Node.js processes: `node cluster.js`
 
 ```sh
 wrk -t10 -c1000 -d600s http://192.168.20.25:3000/
@@ -135,29 +135,31 @@ Requests/sec:   3362.04
 Transfer/sec:      0.86MB
 ```
 
-### Stress test #4 (two CPU cores)
+### Stress test #4 (eight processes)
 
-Finally, the test uses only two cores instead of eight: `node cluster.js`
+Eight Node.js processes: `node cluster.js`
 
 ```sh
 wrk -t10 -c1000 -d600s http://192.168.20.25:3000/
 ```
 
-* RAM usage: 689MB
-* CPU Load average (over 1 minute): 5.03
+* RAM usage: 1.68G
+* CPU Load average (over 1 minute): 10.30
 
 Results:
 
 ```
   10 threads and 1000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   418.90ms   71.75ms   1.95s    88.40%
-    Req/Sec   244.33    155.53   840.00     65.74%
-  1332659 requests in 10.00m, 339.34MB read
-  Socket errors: connect 0, read 0, write 0, timeout 917
-Requests/sec:   2220.73
-Transfer/sec:    579.04KB
+    Latency   314.74ms  230.52ms   2.00s    83.49%
+    Req/Sec   345.04     93.39   810.00     69.73%
+  2053154 requests in 10.00m, 522.80MB read
+  Socket errors: connect 0, read 0, write 0, timeout 805
+Requests/sec:   3421.41
+Transfer/sec:      0.87MB
 ```
+
+
 
 ## Hardware
 
