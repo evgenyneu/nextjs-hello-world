@@ -21,6 +21,7 @@ node .next/standalone/server.js
 ```sh
 ssh lorange "mkdir -p ~/nextjs-hello-world"
 scp -r .next/standalone/. lorange:~/nextjs-hello-world/
+scp cluster.js lorange:~/nextjs-hello-world/
 ```
 
 Run:
@@ -28,9 +29,19 @@ Run:
 ```sh
 ssh lorange
 cd ~/nextjs-hello-world
+```
+
+Run with one node process:
+
+```sh
 node server.js
 ```
 
+Run with clustering (utilize all CPU cores):
+
+```sh
+node cluster.js
+```
 
 ## Benchmarking
 
@@ -78,4 +89,20 @@ Results:
   Socket errors: connect 0, read 256, write 0, timeout 889
 Requests/sec:   1210.83
 Transfer/sec:    315.71KB
+```
+
+### Stress test #2
+
+With cluster mode (all CPU cores): `node cluster.js`
+
+```sh
+wrk -t10 -c1000 -d600s http://192.168.20.25:3000/
+```
+
+RAM usage: [to be filled]
+CPU Load average (over 5 minutes): [to be filled]
+
+Results:
+```
+[benchmark results will go here]
 ```
