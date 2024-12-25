@@ -98,7 +98,7 @@ Requests/sec:   1210.83
 Transfer/sec:    315.71KB
 ```
 
-### Stress test #2
+### Stress test #2 (eight CPU cores)
 
 With cluster mode (all CPU cores): `node cluster.js`
 
@@ -122,15 +122,39 @@ Requests/sec:   3421.41
 Transfer/sec:      0.87MB
 ```
 
-### Stress test #3
+### Stress test #3 (four CPU cores)
 
-Using only half the cores (four instead of eight that were used in stress test #2, cpu cores number was hardcoded in cluster.js): `node cluster.js`
+Using only four CPU cores instead of eight: `node cluster.js`
 
 ```sh
 wrk -t10 -c1000 -d600s http://192.168.20.25:3000/
 ```
 
 RAM usage: 1.05G
+CPU Load average (over 1 minute): 5.03
+
+Results:
+
+```
+  10 threads and 1000 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   289.49ms   28.98ms   1.96s    83.68%
+    Req/Sec   338.89    122.67     0.95k    70.65%
+  2017560 requests in 10.00m, 513.73MB read
+  Socket errors: connect 0, read 0, write 0, timeout 806
+Requests/sec:   3362.04
+Transfer/sec:      0.86MB
+```
+
+### Stress test #4 (two CPU cores)
+
+Finally, the test uses only two cores instead of eight: `node cluster.js`
+
+```sh
+wrk -t10 -c1000 -d600s http://192.168.20.25:3000/
+```
+
+RAM usage: 689MB
 CPU Load average (over 1 minute): 5.03
 
 Results:
