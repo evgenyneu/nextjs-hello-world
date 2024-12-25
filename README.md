@@ -1,9 +1,25 @@
 
 # Next.js Hello World
 
-## Run the project
+This is a simple Next.js app that returns "Hello, World!" message, made for benchmarking Next.js resource usage.
+
+## Build
 
 ```sh
+npm install
 npm run build
-npm run start
+```
+
+Run:
+
+```sh
+node .next/standalone/server.js
+```
+
+
+## Deploy
+
+```sh
+ssh lorange "mkdir -p ~/nextjs-hello-world"
+scp -r .next/standalone/* lorange:~/nextjs-hello-world/
 ```
