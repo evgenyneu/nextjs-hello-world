@@ -51,7 +51,7 @@ node cluster.js
 * RAM usage: 237M
 * CPU Load average (over 1 minute): 0.06
 
-### Server running
+### Server running idle
 
 * Single node process: `node server.js`:
 
