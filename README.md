@@ -45,34 +45,23 @@ node cluster.js
 
 ## Benchmarking
 
-```sh
-sudo apt install wrk
-wrk -t10 -c1000 -d180s http://192.168.20.25:3000/
-```
-
-Results:
-
-```
-> wrk -t10 -c1000 -d180s http://192.168.20.25:3000/
-
-```
 
 ### Before (after reboot)
 
-RAM usage: 237M
-CPU Load average (over 1 minute): 0.06
+* RAM usage: 237M
+* CPU Load average (over 1 minute): 0.06
 
 ### Server running
 
-Single node process: `node server.js`:
+* Single node process: `node server.js`:
 
-RAM usage: 271M
-CPU Load average (over 1 minute): 0.02
+* RAM usage: 271M
+* CPU Load average (over 1 minute): 0.02
 
 Clustering (utilize all CPU cores): `node cluster.js`:
 
-RAM usage: 535M
-CPU Load average (over 1 minute): 0.07
+* RAM usage: 535M
+* CPU Load average (over 1 minute): 0.07
 
 ### Stress test #1
 
@@ -82,8 +71,8 @@ With one node process: `node server.js`
 wrk -t10 -c1000 -d600s http://192.168.20.25:3000/
 ```
 
-RAM usage: 464M
-CPU Load average (over 5 minutes): 0.99
+* RAM usage: 464M
+* CPU Load average (over 5 minutes): 0.99
 
 Results:
 
@@ -106,8 +95,8 @@ With cluster mode (all CPU cores): `node cluster.js`
 wrk -t10 -c1000 -d600s http://192.168.20.25:3000/
 ```
 
-RAM usage: 1.68G
-CPU Load average (over 1 minute): 10.30
+* RAM usage: 1.68G
+* CPU Load average (over 1 minute): 10.30
 
 Results:
 
@@ -130,8 +119,8 @@ Using only four CPU cores instead of eight: `node cluster.js`
 wrk -t10 -c1000 -d600s http://192.168.20.25:3000/
 ```
 
-RAM usage: 1.05G
-CPU Load average (over 1 minute): 5.03
+* RAM usage: 1.05G
+* CPU Load average (over 1 minute): 5.03
 
 Results:
 
@@ -154,8 +143,8 @@ Finally, the test uses only two cores instead of eight: `node cluster.js`
 wrk -t10 -c1000 -d600s http://192.168.20.25:3000/
 ```
 
-RAM usage: 689MB
-CPU Load average (over 1 minute): 5.03
+* RAM usage: 689MB
+* CPU Load average (over 1 minute): 5.03
 
 Results:
 
