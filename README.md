@@ -23,3 +23,11 @@ node .next/standalone/server.js
 ssh lorange "mkdir -p ~/nextjs-hello-world"
 scp -r .next/standalone/* lorange:~/nextjs-hello-world/
 ```
+
+Run:
+
+```sh
+ssh lorange
+cd ~/nextjs-hello-world
+node server.js
+```
