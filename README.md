@@ -1,4 +1,3 @@
-
 # Next.js Hello World
 
 This is a simple Next.js app that returns "Hello, World!" message, made for benchmarking Next.js resource usage.
@@ -21,7 +20,7 @@ node .next/standalone/server.js
 
 ```sh
 ssh lorange "mkdir -p ~/nextjs-hello-world"
-scp -r .next/standalone/* lorange:~/nextjs-hello-world/
+scp -r .next/standalone/. lorange:~/nextjs-hello-world/
 ```
 
 Run:
