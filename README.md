@@ -64,8 +64,15 @@ CPU Load average (over 1 minute): 0.06
 
 ### Server running
 
+Single node process: `node server.js`:
+
 RAM usage: 271M
 CPU Load average (over 1 minute): 0.02
+
+Clustering (utilize all CPU cores): `node cluster.js`:
+
+RAM usage: 535M
+CPU Load average (over 1 minute): 0.07
 
 ### Stress test #1
 
@@ -99,10 +106,18 @@ With cluster mode (all CPU cores): `node cluster.js`
 wrk -t10 -c1000 -d600s http://192.168.20.25:3000/
 ```
 
-RAM usage: [to be filled]
-CPU Load average (over 5 minutes): [to be filled]
+RAM usage: 1.68G
+CPU Load average (over 1 minute): 10.30
 
 Results:
+
 ```
-[benchmark results will go here]
+  10 threads and 1000 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   314.74ms  230.52ms   2.00s    83.49%
+    Req/Sec   345.04     93.39   810.00     69.73%
+  2053154 requests in 10.00m, 522.80MB read
+  Socket errors: connect 0, read 0, write 0, timeout 805
+Requests/sec:   3421.41
+Transfer/sec:      0.87MB
 ```
